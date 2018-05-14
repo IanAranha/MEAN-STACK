@@ -1,0 +1,2 @@
+These files are the JavaScript exercises done during the MEAN stack of Coding Dojo.
+May 2018.

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    function magic_multiply(x, y){
+    	if(x.constructor == Array){
+    		for(let i=0;i<x.length;i++){
+    			x[i]=x[i]*y;
+    		}
+    	} else if(y.constructor == String){
+    		x = 'Cannot multiply by a string'
+    	} else if(x.constructor == String){
+    		new_x = '';
+    		for(let i=0; i<y; i++){
+    			new_x = new_x + x;
+    		}
+    		x = new_x
+    	} else if(x == 0 && y == 0){
+    		x = 'All inputs are 0';
+    	} else {
+    		x = x * y;
+    	}
+    	return x;
+    }
+
+    test1 = magic_multiply(5, 2);
+    console.log(test1)
+    test2 = magic_multiply(0 , 0);
+    console.log(test2);
+    test3 = magic_multiply(5, 0);
+    console.log(test3);
+    test4 = magic_multiply([1,2,3], 2);
+    console.log(test4);
+    test5 = magic_multiply(7, 'three');
+    console.log(test5);
+    test6 = magic_multiply('Brendo', 5);
+    console.log(test6);
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

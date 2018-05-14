@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    
+    //MATH 1
+    function zero_negativity(Array){
+    	for(let i=0; i<Array.length; i++){
+    		if(Array[i] < 0){
+    			return false;
+    			}
+    		}
+    	return true;
+    };
+
+    //MATH 2:
+    function is_even(x){
+    	if(x % 2 == 0){
+    		return true;
+    	} else {
+    		return false;
+    	}
+    };
+
+
+    //MATH 3:
+    function how_many_even(arr){
+    	counter = 0;
+    	for(let x=0; x<arr.length; x++){
+    		if(arr[x] % 2 == 0){
+    			counter += 1;
+    		}
+    	}
+    	return counter;
+    }
+
+    //MATH 4:
+    function create_dummy_array(n){
+    	let new_array= [];
+    	while (new_array.length < n){
+    		let x=Math.floor(Math.random() * 10);
+    		new_array.push(x);
+    	} 
+    	return new_array;
+    }
+
+
+    //MATH 5:
+    function random_choice(arr){
+    	let x = Math.floor(Math.random() * (arr.length));
+    	return arr[x];
+    }
+
+
+    test1=zero_negativity([1,2,3,4,5,6,7]);
+    console.log(test1);
+    test2=zero_negativity([1,2,3,-4,5,6,7]);
+    console.log(test2); 
+    test3 = is_even(5);
+    console.log(test3);
+    test4 = is_even(6);
+    console.log(test4);
+    test5 = how_many_even([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]);
+    console.log(test5);
+    test6=create_dummy_array(10);
+    console.log(test6);
+    test7=random_choice([2,4,6,8,10,1,3,5,7,9]);
+    console.log(test7);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
