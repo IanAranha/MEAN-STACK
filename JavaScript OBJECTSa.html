@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    
+    let students = [
+    {name: 'Remy', cohort: 'Jan'},
+    {name: 'Genevieve', cohort: 'March'},
+    {name: 'Chuck', cohort: 'Jan'},
+    {name: 'Osmund', cohort: 'June'},
+    {name: 'Nikki', cohort: 'June'},
+    {name: 'Boris', cohort: 'June'}
+    ];
+
+
+    console.log(students);
+    //prints the entire object
+
+    function student_roll(arr){
+        for (let i=0; i<arr.length; i++){
+            console.log(students[i])
+            // iterates and prints each object element
+            console.log(students[i].name)
+            //itetrates through and prints only the names
+            console.log('Name: '+students[i].name + ' Cohort: '+students[i].cohort)
+        }
+    }
+    student_roll(students)
+
+  	
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    	//Part 1
+    	function starString(x){
+    		let stars = '';
+    		for(i=0;i<x;i++){
+    			stars+="*";
+    		}
+    		console.log(stars);
+    	}
+
+    	//Part 2
+    	function drawStars(arr){
+            for(let x = 0; x < arr.length; x++){
+                let str = '';
+                for (let i=0; i<arr[x]; i++){
+                    str += '*';
+                    }
+                console.log(str);
+                }
+            }
+
+        //Part 3
+        function drawStars2(arr){
+            for(var x = 0; x < arr.length; x++){
+                let str = '';
+                if (typeof arr[x] === 'number'){
+                    for(let i=0; i<arr[x];i++){
+                        str+='*';
+                        }
+                    console.log(str)
+                    } else if(typeof arr[x] === 'string'){
+                        for (let i=0; i<arr[x].length;i++){
+                            str+=arr[x][0].toLowerCase();
+                        }
+                    console.log(str);
+                    }
+                }
+            }
+
+stars=starString(30);
+newstars=drawStars([4,6,1,3,5,7,25]);
+stars_and_inits=drawStars2([4, "Tom", 1, "Michael", 5, 7, "Jimmy Smith"])
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

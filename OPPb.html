@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function personConstructor(name, age){
+			this.name = name;
+			this.age = age;
+			this.greet = function(){
+				console.log('Hello, my name is ' + this.name + ' and I am ' + this.age + ' years old!')
+				}
+		}
+
+		var anika = new personConstructor('Anika', 33);
+		anika.greet();
+		console.log(anika);
+
+
+		var emily = new personConstructor('Emily', 26);
+		emily.greet();
+		emily.greet = function(){
+			console.log('My name is ' + this.name + " I am the coolest ever!");
+		}
+		emily.greet();
+	</script>
+</head>
+<body>
+
+</body>
+</html>

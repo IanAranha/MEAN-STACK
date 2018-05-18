@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<script type="text/javascript">
+	function Ninja (name){
+		//using 'this' key word, the variables are not scopred to this constructor
+		this.name = name;
+		this.health = 100;
+		//using 'var' key word, the variables are now scoped to this function only and are private
+		var speed = 3;
+		var strength=3;
+
+		//This is a 'Getter' function. Allows to access to private variable
+		this.getSpeed = function(){
+			return speed;
+			}
+
+		this.getStrength = function(){
+			return strength;
+			}
+
+		this.sayName = function(){
+			console.log('I am a Ninja and my name is '+ this.name);
+			return this;
+			}
+
+		this.showStats = function(){
+			console.log('My name is '+this.name);
+			console.log('Health: ' + this.health);
+			console.log('Speed:' + speed);
+			console.log('Strength: '+ strength);
+			return this;
+			}
+
+		this.drinkSake = function(){
+			this.health += 10;
+			console.log('Sake downed!');
+			return this;
+			}
+
+		this.punch = function(opponent){
+			if(opponent instanceof Ninja){
+				console.log('Punching in progress!');
+				opponent.health -= 5;
+				console.log('Punching done!');
+				} 
+				else {
+					console.log('Error: Passed parameter is not of type Ninja!');
+				}
+			}
+
+		this.kick = function(opponent){
+			if (opponent instanceof Ninja){
+				console.log('kicking in progress');
+				opponent.health -= strength * 15;
+				console.log('kicking completed');
+				} 
+				else {
+					console.log('Error: Passed parameter is not of type Ninja!');
+				}
+			}
+		}
+
+	//This line creates a single instant of the Ninja class.
+	var ninja1 =  new Ninja('Hyabusa');
+	ninja1.sayName();
+	ninja1.showStats();
+	ninja1.drinkSake();
+	ninja1.showStats();
+
+	//Linking all the above in one line:
+	var ninja2 = new Ninja('Naruto')
+	ninja2.sayName().showStats().drinkSake().showStats();
+
+	//When we try to access private variable directly, we get undefined
+	console.log('Speed: ' + ninja1.speed);
+
+	//We need to access private variable via the 'Getter' function.
+	console.log('Speed: ' + ninja1.getSpeed());
+
+
+	console.log('Strength: ' + ninja1.strength);
+	console.log('Strength: ' + ninja1.getStrength());
+
+	ninja1.sayName().showStats();
+	ninja2.sayName().showStats();
+	ninja1.punch(ninja2);
+	ninja2.sayName().showStats();
+	ninja1.showStats();
+	ninja2.kick(ninja1);
+	ninja1.showStats();
+	var ninja3;
+	ninja1.punch(ninja3);
+	ninja2.kick(ninja3);
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

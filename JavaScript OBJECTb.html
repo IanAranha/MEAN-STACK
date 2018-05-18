@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    
+   let users = {
+    employees: [
+        {'first_name':  'Miguel', 'last_name' : 'Jones'},
+        {'first_name' : 'Ernie', 'last_name' : 'Bertson'},
+        {'first_name' : 'Nora', 'last_name' : 'Lu'},
+        {'first_name' : 'Sally', 'last_name' : 'Barkyoumb'}
+    ],
+    managers: [
+       {'first_name' : 'Lillian', 'last_name' : 'Chambers'},
+       {'first_name' : 'Gordon', 'last_name' : 'Poe'}
+    ]
+    };
+
+    //Prints the entire object
+    console.log(users);
+
+    //Prints each element of the object
+    for (let user in users){
+        console.log(users[user]);
+    }
+
+    //The assignment solution
+    for(let user in users){
+        //This prints the KEYS  (employees, managers)
+        console.log(user.toUpperCase());
+        
+        //This goes in the object (users), picks each key(user) iterate through each key value [i] and prints the last_name or first_name.
+
+        for (let i = 0; i< users[user].length; i++){
+            let count = i + 1;
+            console.log(count + ' - ' + users[user][i].last_name.toUpperCase() + ' ' + users[user][i].first_name.toUpperCase() + ' - ' + (users[user][i].last_name.length+users[user][i].first_name.length));
+        }
+    }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
