@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<script type="text/javascript">
+	class Ninja {
+		//using 'this' key word, the variables are not scopred to this constructor
+		constructor(name){
+			this.name = name;
+			this.health = 100;
+			this.speed = 3;
+			this.strength = 3;
+		}
+		
+		sayName(){
+			console.log('I am a Ninja and my name is '+ this.name);
+			return this;
+			}
+
+		showStats(){
+			console.log('Name: '+ this.name)
+			console.log('Health: ' + this.health);
+			console.log('Speed:' + this.speed);
+			console.log('Strength: '+ this.strength);
+			return this;
+			}
+
+		drinkSake(){
+			console.log('Drinking Sake');
+			this.health += 10;
+			console.log('Sake downed!');
+			return this;
+			}
+		}
+
+	class Sensei extends Ninja{
+		constructor(name){
+			super(name);
+			this.health = 200;
+			this.speed = 10;
+			this.strength = 10;
+			this.wisdom = 10;
+		}
+
+		speakWisdom(){
+			super.drinkSake();
+			console.log('What one programmer can do in one month, two programmers can do in two months!');
+
+		}
+
+	}
+
+	//This line creates a single instant of the Ninja class.
+	var ninja1 =  new Ninja('Hyabusa');
+	ninja1.sayName();
+	ninja1.showStats();
+	ninja1.drinkSake();
+	ninja1.showStats();
+
+	//Linking all the above in one line:
+	var ninja2 = new Ninja('Naruto')
+	ninja2.sayName().showStats().drinkSake().showStats();
+
+	var sensei1= new Sensei ('Fujita Goro');
+	sensei1.showStats();
+	sensei1.speakWisdom();
+	sensei1.showStats();
+
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
